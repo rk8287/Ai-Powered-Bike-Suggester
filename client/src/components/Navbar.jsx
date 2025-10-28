@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Bike, User } from "lucide-react";
+import { Motorbike, User } from "lucide-react";
 
 function Navbar() {
   return (
@@ -13,8 +13,8 @@ function Navbar() {
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-3">
         <Link to="/" className="flex items-center gap-2 text-xl font-semibold">
-          <Bike className="w-6 h-6 text-blue-500" />
-          <span>AI Bike Suggester</span>
+          <Motorbike className="w-6 h-6 text-blue-500" />
+          <span>First Bike</span>
         </Link>
 
         <div className="flex gap-6 text-sm font-medium">

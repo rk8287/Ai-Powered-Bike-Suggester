@@ -15,7 +15,7 @@ const bikeBrands = [
 function HeroSection() {
   return (
     <section className="h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white">
-      {/* Heading */}
+  
       <motion.h1
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -35,7 +35,7 @@ function HeroSection() {
         Discover AI-powered recommendations tailored to your budget, style, and needs.
       </motion.p>
 
-      {/* Start Button */}
+   
       <motion.div
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
@@ -49,7 +49,7 @@ function HeroSection() {
         </Link>
       </motion.div>
 
-      {/* Bike Brands Logos */}
+    
       <motion.div
         className="grid grid-cols-3 sm:grid-cols-6 gap-8 mt-12 items-center justify-center w-full max-w-5xl"
         initial="hidden"

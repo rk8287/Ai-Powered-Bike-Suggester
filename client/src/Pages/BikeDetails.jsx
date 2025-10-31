@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Button, Card, CardContent } from "@mui/material";
 import { Gauge, Fuel, Cpu, Zap, Wallet } from "lucide-react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
 function BikeDetails() {
@@ -112,12 +112,13 @@ function BikeDetails() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              <Button
+              <Link
+                to={'/contact'}
                 variant="contained"
-                className="!bg-blue-600 hover:!bg-blue-700 text-white text-lg px-6 py-3 rounded-xl shadow-md"
+                className="!bg-blue-600 hover:!bg-blue-700 text-white text-lg px-6 py-2 rounded-xl shadow-md"
               >
                 Contact Showroom
-              </Button>
+              </Link>
               <Button
                 variant="outlined"
                 className="!border-blue-500 !text-white hover:!bg-blue-600/20 text-lg px-6 py-3 rounded-xl"

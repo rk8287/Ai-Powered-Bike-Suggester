@@ -11,7 +11,12 @@ function Recommendations() {
     const fetchBikes = async () => {
       try {
         const res = await axios.get("http://localhost:5000/api/bikes");
-        setBike(res.data);
+       
+        const bikesWithDiscount = res.data.map((bike) => ({
+          ...bike,
+          discount: Math.random() < 0.4, 
+        }));
+        setBike(bikesWithDiscount);
       } catch (error) {
         console.error(error);
       }
@@ -47,8 +52,24 @@ function Recommendations() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.1, duration: 0.5 }}
-            className="bg-gray-800/70 p-6 rounded-2xl shadow-lg hover:shadow-blue-500/30 hover:scale-105 transition-all"
+            className="relative bg-gray-800/70 p-6 rounded-2xl shadow-lg hover:shadow-blue-500/30 hover:scale-105 transition-all"
           >
+            
+            {bike.discount && (
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: [1.1, 1, 1.1] }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 1.5,
+                  ease: "easeInOut",
+                }}
+                className="absolute top-4 left-4 bg-red-500 text-white text-sm font-bold px-3 py-1 rounded-full shadow-lg"
+              >
+                20% OFF
+              </motion.div>
+            )}
+
             <div className="w-full h-48 sm:h-56 md:h-60 overflow-hidden rounded-xl mb-4">
               <img
                 src={bike.image}
@@ -58,7 +79,20 @@ function Recommendations() {
             </div>
 
             <h3 className="text-xl font-semibold mb-2">{bike.name}</h3>
-            <p className="text-gray-400 mb-4">{bike.price}</p>
+            <p className="text-gray-400 mb-4">
+              {bike.discount ? (
+                <>
+                  <span className="line-through text-gray-500 mr-2">
+                    {bike.price}
+                  </span>
+                  <span className="text-green-400 font-bold">
+                    ₹{(parseInt(bike.price.replace(/[^0-9]/g, "")) * 0.8).toLocaleString()}
+                 <space></space> L</span>
+                </>
+              ) : (
+                bike.price
+              )}
+            </p>
 
             <Link
               to={`/details/${bike.id}`}

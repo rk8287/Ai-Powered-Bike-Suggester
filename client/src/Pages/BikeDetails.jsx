@@ -81,7 +81,7 @@ function BikeDetails() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
       >
-        {/* 🏍️ Image + Basic Info */}
+        
         <div className="flex flex-col md:flex-row gap-10 items-center">
           <motion.img
             src={bike.image}
@@ -119,17 +119,17 @@ function BikeDetails() {
               >
                 Contact Showroom
               </Link>
-              <Button
+              <Link to={'/test-ride/booking'}
                 variant="outlined"
-                className="!border-blue-500 !text-white hover:!bg-blue-600/20 text-lg px-6 py-3 rounded-xl"
+                className="!border-blue-500 !text-white hover:!bg-blue-600/20 text-lg px-6 py-2 rounded-xl border-1"
               >
                 Test Ride
-              </Button>
+              </Link>
             </motion.div>
           </div>
         </div>
 
-        {/* ⚙️ Features */}
+        
         <motion.div
           className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
           initial={{ opacity: 0 }}

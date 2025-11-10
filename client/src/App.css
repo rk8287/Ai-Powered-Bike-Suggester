@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@import "react-datepicker/dist/react-datepicker.css";
+@import "react-time-picker/dist/TimePicker.css";
+@import "react-clock/dist/Clock.css";
+
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -11,3 +15,5 @@
   background-size: 400% 400%;
   animation: gradientMove 12s ease infinite;
 }
+
+

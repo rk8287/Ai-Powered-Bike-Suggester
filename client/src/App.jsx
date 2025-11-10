@@ -8,6 +8,10 @@ import BikeDetails from "./Pages/BikeDetails";
 import Profile from "./Pages/Profile";
 import FormSuccess from "./Pages/FormSuccess";
 import Contact from "./Pages/Contact";
+import Login from "./Pages/Login";
+import Signup from "./Pages/Signup";
+import TestRide from "./Pages/TestRide";
+import Payment from "./Pages/Payment";
 
 function App() {
   return (
@@ -20,6 +24,10 @@ function App() {
         <Route path="/details/:id" element={<BikeDetails/>} />
         <Route path="/profile" element={<Profile/>} />
         <Route path="/contact" element={<Contact/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/signup" element={<Signup/>} />
+        <Route path="/test-ride/booking" element={<TestRide/>} />
+        <Route path="/payment" element={<Payment/>} />
         <Route path="/success" element={<FormSuccess/>} />
       </Routes>
     </Router>

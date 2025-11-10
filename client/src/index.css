@@ -4,8 +4,15 @@
   100% { background-position: 0% 50%; }
 }
 
+@import "react-datepicker/dist/react-datepicker.css";
+@import "react-time-picker/dist/TimePicker.css";
+@import "react-clock/dist/Clock.css";
+
+
 .animated-bg {
   background: linear-gradient(-45deg, #1e3a8a, #3b82f6, #9333ea, #0f172a);
   background-size: 400% 400%;
   animation: gradientMove 12s ease infinite;
 }
+
+

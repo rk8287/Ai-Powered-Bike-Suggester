@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import "./Payment.css";
 
 function Payment() {
   const location = useLocation();
@@ -48,14 +49,81 @@ function Payment() {
         {/* Floating Glow */}
         <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 rounded-3xl blur-2xl -z-10"></div>
 
-        <motion.img
-          src="https://cdn-icons-png.flaticon.com/512/679/679720.png"
-          alt="Bike Icon"
-          className="w-20 mx-auto mb-4 drop-shadow-lg"
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.8 }}
-        />
+        {/* From Uiverse.io by Praashoo7 */}
+        <div className="flip-card">
+          <div className="flip-card-inner">
+            <div className="flip-card-front">
+              <p className="heading_8264">MASTERCARD</p>
+
+              <svg
+                className="logo"
+                xmlns="http://www.w3.org/2000/svg"
+                width="36"
+                height="36"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  fill="#ff9800"
+                  d="M32 10A14 14 0 1 0 32 38A14 14 0 1 0 32 10Z"
+                ></path>
+                <path
+                  fill="#d50000"
+                  d="M16 10A14 14 0 1 0 16 38A14 14 0 1 0 16 10Z"
+                ></path>
+                <path
+                  fill="#ff3d00"
+                  d="M18,24c0,4.755,2.376,8.95,6,11.48c3.624-2.53,6-6.725,6-11.48s-2.376-8.95-6-11.48
+          C20.376,15.05,18,19.245,18,24z"
+                ></path>
+              </svg>
+
+              <svg
+                version="1.1"
+                className="chip"
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                width="30px"
+                height="30px"
+                viewBox="0 0 50 50"
+                xmlSpace="preserve"
+              >
+                {/* chip SVG image content here */}
+              </svg>
+
+              <svg
+                version="1.1"
+                className="contactless"
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                width="20px"
+                height="20px"
+                viewBox="0 0 50 50"
+                xmlSpace="preserve"
+              >
+                {/* contactless SVG image content here */}
+              </svg>
+
+              <p className="number">9759 2484 5269 6576</p>
+              <p className="valid_thru">VALID THRU</p>
+              <p className="date_8264">1 2 / 2 4</p>
+              <p className="name">BRUCE WAYNE</p>
+            </div>
+
+            <div className="flip-card-back">
+              <div className="strip"></div>
+              <div className="mstrip"></div>
+              <div className="sstrip">
+                <p className="code">***</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <h2 className="text-3xl font-bold mb-3 text-amber-50">
           Confirm Your Payment 💳
@@ -69,8 +137,7 @@ function Payment() {
           <span className="font-semibold text-white">
             {formData.date?.toString().slice(0, 15)}
           </span>{" "}
-          at{" "}
-          <span className="font-semibold text-white">{formData.time}</span>.
+          at <span className="font-semibold text-white">{formData.time}</span>.
         </p>
 
         <motion.button

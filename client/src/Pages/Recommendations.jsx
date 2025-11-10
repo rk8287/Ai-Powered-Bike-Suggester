@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import DiscountBar from "./DiscountBar";
 
 function Recommendations() {
   const [bikes, setBike] = useState([]);
@@ -30,7 +31,9 @@ function Recommendations() {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white pt-24 px-6">
+    <>
+    <DiscountBar/>
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white pt-30 px-6">
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
         Your Best Matches 🚀
       </h2>
@@ -103,7 +106,7 @@ function Recommendations() {
           </motion.div>
         ))}
       </div>
-    </div>
+    </div></>
   );
 }
 

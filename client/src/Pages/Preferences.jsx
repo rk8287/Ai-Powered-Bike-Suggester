@@ -1,88 +1,85 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import AILoader from "./AILoader";
 
-function Preferences() {
-   const navigate = useNavigate();
-  const [form, setForm] = useState({
-    budget: "200000",
-    usage: "",
-    style: "",
-  });
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+const Preference = () => {
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/recommendations");
+    setLoading(true); 
+
+   
+    setTimeout(() => {
+      setLoading(false);
+      navigate("/recommendations"); 
+    }, 5000);
   };
 
+  if (loading) {
+    return <AILoader />;
+  }
+
   return (
-    <div className="min-h-screen flex justify-center items-center bg-[#0f172a] text-white px-6">
-      <motion.form
-        onSubmit={handleSubmit}
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 via-slate-900 to-purple-900 px-4 py-8">
+      <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="bg-[#1e293b] p-10 rounded-2xl shadow-xl w-full max-w-lg space-y-6"
+        className="bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-lg max-w-md w-full border border-white/10"
       >
-        <h2 className="text-3xl font-bold text-center mb-6">
-          Tell Us About Your Preference 🧠
+        <h2 className="text-2xl md:text-3xl font-bold text-center text-blue-400 mb-6">
+          Choose Your Riding Preferences 🏍️
         </h2>
 
-        <div>
-          <label className="block mb-2 text-gray-300">Budget (₹)</label>
-          <input
-            type="number"
-            name="budget"
-            value={form.budget}
-            onChange={handleChange}
-            className="w-full p-3 rounded-lg bg-[#111827] border border-gray-700"
-          />
-        </div>
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div>
+            <label className="block text-gray-300 mb-2">Budget Range 💰</label>
+            <select className="w-full bg-slate-800/80 text-white p-3 rounded-lg border border-slate-700 focus:ring-2 focus:ring-blue-500">
+              <option value="">Select Range</option>
+              <option>₹80,000 - ₹1,00,000</option>
+              <option>₹1,00,000 - ₹1,50,000</option>
+              <option>₹1,50,000+</option>
+            </select>
+          </div>
 
-        <div>
-          <label className="block mb-2 text-gray-300">Usage Type</label>
-          <select
-            name="usage"
-            value={form.usage}
-            onChange={handleChange}
-            className="w-full p-3 rounded-lg bg-[#111827] border border-gray-700"
+          <div>
+            <label className="block text-gray-300 mb-2">Purpose 🛣️</label>
+            <select className="w-full bg-slate-800/80 text-white p-3 rounded-lg border border-slate-700 focus:ring-2 focus:ring-blue-500">
+              <option value="">Select Purpose</option>
+              <option>Daily Commute</option>
+              <option>Long Ride / Touring</option>
+              <option>Sports / Performance</option>
+              <option>Electric / Eco-Friendly</option>
+            </select>
+          </div>
+
+          <div>
+            <label className="block text-gray-300 mb-2">Brand Preference 🏁</label>
+            <select className="w-full bg-slate-800/80 text-white p-3 rounded-lg border border-slate-700 focus:ring-2 focus:ring-blue-500">
+              <option value="">Select Brand</option>
+              <option>Yamaha</option>
+              <option>TVS</option>
+              <option>Royal Enfield</option>
+              <option>Hero</option>
+              <option>Honda</option>
+            </select>
+          </div>
+
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            type="submit"
+            className="w-full py-3 mt-3 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 font-semibold shadow-lg hover:shadow-blue-500/40 transition-all text-white"
           >
-            <option value="">Select...</option>
-            <option value="daily">Daily Commute</option>
-            <option value="touring">Touring</option>
-            <option value="sport">Sport</option>
-          </select>
-        </div>
-
-        <div>
-          <label className="block mb-2 text-gray-300">Style Preference</label>
-          <select
-            name="style"
-            value={form.style}
-            onChange={handleChange}
-            className="w-full p-3 rounded-lg bg-[#111827] border border-gray-700"
-          >
-            <option value="">Select...</option>
-            <option value="sporty">Sporty</option>
-            <option value="classic">Classic</option>
-            <option value="cruiser">Cruiser</option>
-          </select>
-        </div>
-
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.9 }}
-          className="bg-blue-600 hover:bg-blue-700 w-full p-3 rounded-lg font-semibold mt-4"
-        >
-          Get Suggestion
-        </motion.button>
-      </motion.form>
+            Find My Bike 🚀
+          </motion.button>
+        </form>
+      </motion.div>
     </div>
-  )
-}
+  );
+};
 
-export default Preferences
+export default Preference;

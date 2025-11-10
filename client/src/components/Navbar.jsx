@@ -46,7 +46,7 @@ function Navbar() {
               to="/login"
               className="relative overflow-hidden px-4 py-2 rounded-full text-white font-medium shadow-md bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all duration-300"
             >
-              <span className="relative z-10">Login / Signup</span>
+              <span className="relative z-10 ">Login / Signup</span>
               <span className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent translate-x-[-100%] animate-shine"></span>
             </Link>
           )}
@@ -61,53 +61,6 @@ function Navbar() {
         </button>
       </div>
 
-      
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-[#0f172a]/95 border-t border-gray-800 backdrop-blur-md px-6 py-4 space-y-4 text-sm font-medium"
-          >
-            <Link
-              to="/"
-              className="block hover:text-blue-400"
-              onClick={() => setMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              to="/preferences"
-              className="block hover:text-blue-400"
-              onClick={() => setMenuOpen(false)}
-            >
-              Get Suggestion
-            </Link>
-
-            {isLoggedIn ? (
-              <Link
-                to="/profile"
-                onClick={() => setMenuOpen(false)}
-                className="flex items-center gap-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-all duration-300 shadow-md w-fit"
-              >
-                <User className="w-4 h-4" />
-                Profile
-              </Link>
-            ) : (
-              <Link
-                to="/login"
-                onClick={() => setMenuOpen(false)}
-                className="relative overflow-hidden px-4 py-2 rounded-full text-white font-medium shadow-md bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all duration-300 inline-block"
-              >
-                <span className="relative z-10">Login / Signup</span>
-                <span className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent translate-x-[-100%] animate-shine"></span>
-              </Link>
-            )}
-          </motion.div>
-        )}
-      </AnimatePresence>
     </motion.nav>
   );
 }

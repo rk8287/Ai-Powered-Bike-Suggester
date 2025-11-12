@@ -1,140 +1,55 @@
-<h1 align="center">🏍️ <span style="color:#3b82f6;">RideMate</span> – AI Bike Recommendation & Test Ride Booking Web App</h1>
-
+<!-- 🌈 ANIMATED GRADIENT BANNER -->
 <p align="center">
-  <img src="https://github.com/yourusername/yourrepo/assets/banner.gif" alt="RideMate Banner" width="80%" />
+  <img src="https://svg-banners.vercel.app/api?type=glitch&text1=RideMate%20🏍️&width=900&height=200" alt="RideMate Banner" />
 </p>
 
+<h1 align="center">🚀 <span style="color:#60a5fa;">RideMate</span> – AI Bike Recommendation & Test Ride Booking</h1>
+
 <p align="center">
-  <a href="#"><img src="https://img.shields.io/badge/Frontend-React-61dafb?style=for-the-badge&logo=react&logoColor=white" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/Backend-Node.js-3c873a?style=for-the-badge&logo=node.js&logoColor=white" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/Database-MongoDB-4ea94b?style=for-the-badge&logo=mongodb&logoColor=white" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/UI-TailwindCSS-38bdf8?style=for-the-badge&logo=tailwind-css&logoColor=white" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/Payments-Razorpay-0d47a1?style=for-the-badge&logo=razorpay&logoColor=white" /></a>
+  <img src="https://img.shields.io/badge/Frontend-React-61dafb?style=for-the-badge&logo=react&logoColor=white" />
+  <img src="https://img.shields.io/badge/Backend-Node.js-3c873a?style=for-the-badge&logo=node.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/Database-MongoDB-4ea94b?style=for-the-badge&logo=mongodb&logoColor=white" />
+  <img src="https://img.shields.io/badge/Payment-Razorpay-0d47a1?style=for-the-badge&logo=razorpay&logoColor=white" />
+  <img src="https://img.shields.io/badge/UI-TailwindCSS-38bdf8?style=for-the-badge&logo=tailwind-css&logoColor=white" />
 </p>
 
 ---
 
-### 🌟 **Project Overview**
+## 🌟 Overview
 
-**RideMate** is a next-gen **AI-powered MERN stack web application** that helps users **discover, compare, and book test rides** for bikes with a **modern animated UI**, secure **Razorpay payment**, and a personalized user profile.
+**RideMate** is a futuristic **MERN Stack application** designed for **bike enthusiasts** to explore, compare, and book **test rides** with a visually stunning and animated interface.  
+From **AI-inspired bike recommendations** to **Razorpay payment integration**, everything is wrapped in a **modern neon-glow UI** with Framer Motion animations.
 
-> 🧠 Designed with smooth **Framer Motion animations**, **dark neon gradients**, and a futuristic interface to give a premium feel.
+> “Your next ride starts with a click.” 💨
 
 ---
 
-### ⚙️ **Tech Stack**
+## ⚙️ Tech Stack
 
-| Category | Technologies |
-|:--|:--|
+| Layer | Technologies Used |
+|:------|:------------------|
 | 💻 Frontend | React (Vite), Tailwind CSS, Redux Toolkit, Framer Motion |
-| 🛠 Backend | Node.js, Express.js |
-| 🗄 Database | MongoDB |
-| 💳 Payment | Razorpay |
-| 🧭 Routing | React Router DOM |
+| 🧩 Backend | Node.js, Express.js |
+| 🗄️ Database | MongoDB (Mongoose ORM) |
+| 💳 Payment | Razorpay Integration |
 | 🔐 Auth | JWT, bcrypt.js |
+| 🎨 Animation | Framer Motion, Lucide Icons |
 
 ---
 
-### ✨ **Features**
+## ✨ Features
 
-✅ AI-inspired Bike Recommendation UI  
-✅ Animated Loader: “Searching for the best bike…” 🔍  
-✅ Book Test Rides with Date & Time Selection  
-✅ Secure Razorpay Payment Integration 💳  
-✅ Animated MasterCard Flip Effect  
-✅ User Profile Page with Saved Bikes  
-✅ Auto-sliding Discount Message Navbar 🏷️  
-✅ Modern Mobile & Desktop Responsive Design  
-✅ Modular Codebase (Routes, Controllers, Redux, Components)  
-✅ Gradient Backgrounds & Framer Motion Animations 🌈  
-
----
-RideMate/
-│
-├── backend/
-│ ├── controllers/
-│ ├── models/
-│ ├── routes/
-│ └── server.js
-│
-├── frontend/
-│ ├── src/
-│ │ ├── components/
-│ │ ├── pages/
-│ │ ├── redux/
-│ │ ├── App.jsx
-│ │ ├── main.jsx
-│ │ └── styles/
-│ ├── public/
-│ └── package.json
-│
-└── README.md
-
+- 🚀 **AI-inspired Bike Recommendation UI**
+- 🕹️ **Modern Test Ride Booking Page** with Animated Date/Time Picker
+- 💳 **Razorpay Payment Integration**
+- 🎞️ **Dynamic Loader** – “AI Searching Best Bike…”
+- 🧍 **User Profile with Saved Bikes**
+- 💬 **Auto-Sliding Discount Navbar**
+- 🌈 **Beautiful Gradient Backgrounds**
+- 📱 **Fully Responsive (Mobile + Desktop)**
+- ⚡ **Framer Motion Animations**
 
 ---
 
-### 🚀 **Setup Instructions**
-
-#### 🧩 1. Clone the repository
-```bash
-git clone https://github.com/yourusername/RideMate.git
-cd RideMate
-cd frontend
-npm install
-cd ../backend
-npm install
-
-MONGO_URI=your_mongodb_uri
-JWT_SECRET=your_secret
-RAZORPAY_KEY_ID=your_key
-RAZORPAY_SECRET=your_secret
-
-MONGO_URI=your_mongodb_uri
-JWT_SECRET=your_secret
-RAZORPAY_KEY_ID=your_key
-RAZORPAY_SECRET=your_secret
-
-cd frontend
-npm run dev
-
-cd backend
-nodemon server.js
-
-Then open 👉 http://localhost:5173
-
-🖼️ Screenshots
-🏠 Home	⚙️ Preferences	👤 Profile	💳 Payment
-
-	
-	
-	
-🪄 Future Improvements
-
-🤖 AI Recommendation Engine for bikes
-
-📊 Admin Dashboard for analytics
-
-💬 Real-time Chat with Dealers
-
-🌍 PWA (Progressive Web App) version
-
-🧾 Email Notifications & Booking Summary
-
-👨‍💻 Author
-
-Rounak Singh
-Full Stack MERN Developer 💻
-📍 India
-🌐 GitHub
- | ✉️ Email
-
-⭐ Show Your Support
-
-If you like this project, give it a star ⭐ — it motivates me to build more awesome projects!
-
-"Code is like humor — when you have to explain it, it’s bad." 😄
-
-<p align="center"> <img src="https://github.com/yourusername/yourrepo/assets/footer.gif" width="70%" alt="RideMate Footer Animation"/> </p> ```
-
-### 📁 **Project Structure**
+## 📂 Project Structure
 
